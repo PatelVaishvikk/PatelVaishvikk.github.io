@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Vaishvik Patel - Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
+  <!-- Bootstrap 5 CSS -->
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+  />
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f9;
+      color: #333;
+      overflow-x: hidden;
+    }
+
+    /* Header Styles */
+    header {
+      background: linear-gradient(to right, #4caf50, #2e7d32);
+      color: #fff;
+      padding: 4rem 0;
+      text-align: center;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      position: relative;
+      overflow: hidden;
+      margin-bottom: 0;
+    }
+    .profile-image {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      margin: 0 auto;
+      display: block;
+      border: 3px solid #4caf50;
+      z-index: 2;
+      position: relative;
+    }
+    header h1 {
+      margin: 1rem 0 0.5rem;
+      font-size: 2.5rem;
+      position: relative;
+      z-index: 2;
+    }
+    header p {
+      font-weight: 500;
+      font-size: 1.2rem;
+      z-index: 2;
+      position: relative;
+    }
+
+    /* Animated Background for Header */
+    .header-bg {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 20%, transparent 20%),
+        radial-gradient(circle, rgba(255, 255, 255, 0.1) 20%, transparent 20%);
+      background-position: 0 0, 50px 50px;
+      background-size: 100px 100px;
+      opacity: 0.3;
+      animation: move-bg 10s linear infinite;
+    }
+    @keyframes move-bg {
+      0% {
+        background-position: 0 0, 50px 50px;
+      }
+      50% {
+        background-position: 50px 50px, 0 0;
+      }
+      100% {
+        background-position: 0 0, 50px 50px;
+      }
+    }
+
+    /* Navbar Customization */
+    .navbar {
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      z-index: 1000;
+    }
+    .navbar-brand {
+      font-weight: 700;
+      color: #4caf50 !important;
+    }
+    .nav-link {
+      font-weight: bold;
+      color: #4caf50 !important;
+      margin: 0 0.5rem;
+    }
+    .nav-link:hover {
+      color: #2e7d32 !important;
+    }
+
+    /* Footer Styles */
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background-color: #333;
+      color: #fff;
+      box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1);
+      margin-top: 3rem;
+    }
+
+    /* Scroll to Top Button */
+    .scroll-to-top {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #4caf50;
+      color: #fff;
+      border: none;
+      padding: 0.8rem 1rem;
+      border-radius: 50px;
+      cursor: pointer;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      font-size: 1rem;
+      display: none;
+      z-index: 9999;
+      transition: background-color 0.3s;
+    }
+    .scroll-to-top:hover {
+      background-color: #2e7d32;
+    }
+
+    /* Fade-in Sections */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+    .fade-in.in-view {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="header-bg"></div>
+    <img
+      src="https://avatars.githubusercontent.com/u/85678971?v=4"
+      alt="Profile Image"
+      class="profile-image"
+    />
+    <h1>Welcome to Vaishvik Patel's Portfolio</h1>
+    <p>AI Engineer | Data Scientist | Quantum Computing Enthusiast</p>
+  </header>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-white">
+    <div class="container">
+      <a class="navbar-brand" href="#">VP</a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarNav"
+        aria-controls="navbarNav"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="#about">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#projects">Projects</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#achievements">Achievements</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#interests">Interests</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#contact">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- About Section -->
+  <section id="about" class="container my-5 fade-in">
+    <h2>About Me</h2>
+    <p>
+      Hello! I'm <strong>Vaishvik Patel</strong>, a driven and innovative AI Engineer with a
+      strong foundation in machine learning, quantum computing, neural networks,
+      and data analysis. I am passionate about leveraging technology to solve
+      real-world problems and make a meaningful impact. My work often bridges
+      cutting-edge research and practical application, ensuring that solutions
+      are not only effective but also efficient and scalable.
+    </p>
+    <p>
+      I am also deeply interested in astrophysics and cosmology, exploring the
+      mysteries of the universe through both science and spirituality. When I'm
+      not coding or researching, you can find me immersed in understanding the
+      fundamental nature of atoms, galaxies, and everything in between.
+    </p>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects" class="container my-5 fade-in">
+    <h2>Projects</h2>
+    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+      <!-- Project 1 -->
+      <div class="col">
+        <div class="card h-100 shadow-sm">
+          <img
+            src="https://via.placeholder.com/600x300?text=Brain+Tumor+Classification"
+            class="card-img-top"
+            alt="Brain Tumor Classification"
+          />
+          <div class="card-body d-flex flex-column">
+            <h5 class="card-title">Brain Tumor Classification</h5>
+            <p class="card-text">
+              A CNN-based app integrated with Gradio to classify brain tumors
+              with precision.
+            </p>
+            <button
+              class="btn btn-primary mt-auto"
+              data-bs-toggle="modal"
+              data-bs-target="#projectModal1"
+            >
+              More Details
+            </button>
+          </div>
+        </div>
+      </div>
+      <!-- Project 2 -->
+      <div class="col">
+        <div class="card h-100 shadow-sm">
+          <img
+            src="https://via.placeholder.com/600x300?text=Galaxy+Morphology+Classification"
+            class="card-img-top"
+            alt="Galaxy Morphology Classification"
+          />
+          <div class="card-body d-flex flex-column">
+            <h5 class="card-title">Galaxy Morphology Classification</h5>
+            <p class="card-text">
+              Using CNN and SDSS survey images to classify galaxy shapes with
+              improved accuracy.
+            </p>
+            <button
+              class="btn btn-primary mt-auto"
+              data-bs-toggle="modal"
+              data-bs-target="#projectModal2"
+            >
+              More Details
+            </button>
+          </div>
+        </div>
+      </div>
+      <!-- Project 3 -->
+      <div class="col">
+        <div class="card h-100 shadow-sm">
+          <img
+            src="https://via.placeholder.com/600x300?text=Movie+Recommendation+System"
+            class="card-img-top"
+            alt="Movie Recommendation System"
+          />
+          <div class="card-body d-flex flex-column">
+            <h5 class="card-title">Movie Recommendation System</h5>
+            <p class="card-text">
+              A Python-based NLP project utilizing Streamlit for user-friendly
+              movie suggestions.
+            </p>
+            <button
+              class="btn btn-primary mt-auto"
+              data-bs-toggle="modal"
+              data-bs-target="#projectModal3"
+            >
+              More Details
+            </button>
+          </div>
+        </div>
+      </div>
+      <!-- Project 4 -->
+      <div class="col">
+        <div class="card h-100 shadow-sm">
+          <img
+            src="https://via.placeholder.com/600x300?text=Cosmic+Ray+Identification"
+            class="card-img-top"
+            alt="Cosmic Ray Identification"
+          />
+          <div class="card-body d-flex flex-column">
+            <h5 class="card-title">Cosmic Ray Identification</h5>
+            <p class="card-text">
+              Developed a machine learning model to detect and mask cosmic ray
+              artifacts from telescope images.
+            </p>
+            <button
+              class="btn btn-primary mt-auto"
+              data-bs-toggle="modal"
+              data-bs-target="#projectModal4"
+            >
+              More Details
+            </button>
+          </div>
+        </div>
+      </div>
+      <!-- Project 5 -->
+      <div class="col">
+        <div class="card h-100 shadow-sm">
+          <img
+            src="https://via.placeholder.com/600x300?text=Predicting+Cosmological+Parameters"
+            class="card-img-top"
+            alt="Predicting Cosmological Parameters"
+          />
+          <div class="card-body d-flex flex-column">
+            <h5 class="card-title">Predicting Cosmological Parameters</h5>
+            <p class="card-text">
+              Used ML models to estimate parameters like the Hubble constant
+              from CMB data.
+            </p>
+            <button
+              class="btn btn-primary mt-auto"
+              data-bs-toggle="modal"
+              data-bs-target="#projectModal5"
+            >
+              More Details
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Achievements Section -->
+  <section id="achievements" class="container my-5 fade-in">
+    <h2>Achievements</h2>
+    <ul>
+      <li>
+        Developed a tumor detection model using CNN with high precision and
+        recall.
+      </li>
+      <li>Created a movie recommendation system using NLP techniques.</li>
+      <li>Contributed to research on galaxy morphology using SDSS data.</li>
+      <li>
+        Received Early Completion and Academic Excellence Recognition from
+        NPower Canada.
+      </li>
+      <li>Awarded Best Employee of the Month at Concentrix.</li>
+    </ul>
+  </section>
+
+  <!-- Interests Section -->
+  <section id="interests" class="container my-5 fade-in">
+    <h2>Interests</h2>
+    <ul>
+      <li>Astrophysics and exploring the cosmos.</li>
+      <li>Quantum computing and its applications in AI.</li>
+      <li>Neural networks and their potential to solve complex problems.</li>
+      <li>Blending science with spirituality to uncover universal truths.</li>
+    </ul>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="container my-5 fade-in">
+    <h2>Contact</h2>
+    <p>
+      Email:
+      <a href="mailto:vaishvik.patel@example.com">vaishvik.patel@example.com</a>
+    </p>
+    <p>
+      LinkedIn:
+      <a href="https://linkedin.com/in/vaishvik-patel" target="_blank"
+        >linkedin.com/in/vaishvik-patel</a
+      >
+    </p>
+    <p>
+      GitHub:
+      <a href="https://github.com/PatelVaishvikk" target="_blank"
+        >github.com/PatelVaishvikk</a
+      >
+    </p>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Vaishvik Patel. All rights reserved.</p>
+  </footer>
+
+  <!-- Scroll to Top Button -->
+  <button class="scroll-to-top" id="scrollToTopBtn">&#8679;</button>
+
+  <!-- Project Modals -->
+  <!-- Modal 1 -->
+  <div
+    class="modal fade"
+    id="projectModal1"
+    tabindex="-1"
+    aria-labelledby="projectModal1Label"
+    aria-hidden="true"
+  >
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="projectModal1Label">
+            Brain Tumor Classification
+          </h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <img
+            src="https://via.placeholder.com/600x300?text=Brain+Tumor+Classification"
+            class="img-fluid mb-3"
+            alt="Brain Tumor Classification"
+          />
+          <p>
+            A CNN-based app integrated with Gradio to classify brain tumors with
+            precision. This model leverages advanced deep learning architectures
+            for accurate classification and is deployed using a user-friendly
+            interface.
+          </p>
+          <p>
+            <strong>Tech Stack:</strong> Python, TensorFlow/Keras, Gradio,
+            NumPy, OpenCV.
+          </p>
+        </div>
+        <div class="modal-footer">
+          <a
+            href="https://github.com/PatelVaishvikk/brain-tumor-classification"
+            target="_blank"
+            class="btn btn-outline-primary"
+          >
+            View on GitHub
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 2 -->
+  <div
+    class="modal fade"
+    id="projectModal2"
+    tabindex="-1"
+    aria-labelledby="projectModal2Label"
+    aria-hidden="true"
+  >
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="projectModal2Label">
+            Galaxy Morphology Classification
+          </h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <img
+            src="https://via.placeholder.com/600x300?text=Galaxy+Morphology+Classification"
+            class="img-fluid mb-3"
+            alt="Galaxy Morphology Classification"
+          />
+          <p>
+            CNN model trained on SDSS survey images to classify galaxy shapes.
+            It helps astronomers quickly analyze large-scale sky surveys.
+          </p>
+          <p>
+            <strong>Tech Stack:</strong> Python, PyTorch/TensorFlow, OpenCV,
+            SciPy.
+          </p>
+        </div>
+        <div class="modal-footer">
+          <a
+            href="https://github.com/PatelVaishvikk/galaxy-morphology"
+            target="_blank"
+            class="btn btn-outline-primary"
+          >
+            View on GitHub
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 3 -->
+  <div
+    class="modal fade"
+    id="projectModal3"
+    tabindex="-1"
+    aria-labelledby="projectModal3Label"
+    aria-hidden="true"
+  >
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="projectModal3Label">
+            Movie Recommendation System
+          </h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <img
+            src="https://via.placeholder.com/600x300?text=Movie+Recommendation+System"
+            class="img-fluid mb-3"
+            alt="Movie Recommendation System"
+          />
+          <p>
+            NLP-based recommendation engine using user reviews and metadata to
+            suggest relevant movies. Deployed via Streamlit for easy user
+            interaction.
+          </p>
+          <p>
+            <strong>Tech Stack:</strong> Python, NLTK, scikit-learn, Streamlit.
+          </p>
+        </div>
+        <div class="modal-footer">
+          <a
+            href="https://github.com/PatelVaishvikk/movie-recommendation"
+            target="_blank"
+            class="btn btn-outline-primary"
+          >
+            View on GitHub
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 4 -->
+  <div
+    class="modal fade"
+    id="projectModal4"
+    tabindex="-1"
+    aria-labelledby="projectModal4Label"
+    aria-hidden="true"
+  >
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="projectModal4Label">
+            Cosmic Ray Identification
+          </h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <img
+            src="https://via.placeholder.com/600x300?text=Cosmic+Ray+Identification"
+            class="img-fluid mb-3"
+            alt="Cosmic Ray Identification"
+          />
+          <p>
+            Machine learning model that detects and masks cosmic ray artifacts
+            on telescope images. Improves data quality for astronomical
+            analysis.
+          </p>
+          <p>
+            <strong>Tech Stack:</strong> Python, scikit-image, OpenCV,
+            scikit-learn.
+          </p>
+        </div>
+        <div class="modal-footer">
+          <a
+            href="https://github.com/PatelVaishvikk/cosmic-ray-identification"
+            target="_blank"
+            class="btn btn-outline-primary"
+          >
+            View on GitHub
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 5 -->
+  <div
+    class="modal fade"
+    id="projectModal5"
+    tabindex="-1"
+    aria-labelledby="projectModal5Label"
+    aria-hidden="true"
+  >
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="projectModal5Label">
+            Predicting Cosmological Parameters
+          </h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <img
+            src="https://via.placeholder.com/600x300?text=Predicting+Cosmological+Parameters"
+            class="img-fluid mb-3"
+            alt="Predicting Cosmological Parameters"
+          />
+          <p>
+            Employed ML models to estimate parameters like the Hubble constant
+            from CMB data. Provides accurate predictions that supplement
+            cosmological research.
+          </p>
+          <p>
+            <strong>Tech Stack:</strong> Python, TensorFlow, NumPy, Astropy.
+          </p>
+        </div>
+        <div class="modal-footer">
+          <a
+            href="https://github.com/PatelVaishvikk/cosmological-parameters"
+            target="_blank"
+            class="btn btn-outline-primary"
+          >
+            View on GitHub
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Intersection Observer & Scroll to Top Scripts -->
+  <button class="scroll-to-top" id="scrollToTopBtn">&#8679;</button>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // Intersection Observer for fade-in sections
+    const fadeSections = document.querySelectorAll('.fade-in');
+    const options = {
+      threshold: 0.1,
+    };
+    const observer = new IntersectionObserver((entries, obs) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('in-view');
+          obs.unobserve(entry.target);
+        }
+      });
+    }, options);
+
+    fadeSections.forEach((section) => {
+      observer.observe(section);
+    });
+
+    // Scroll to Top Button
+    const scrollBtn = document.getElementById('scrollToTopBtn');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 300) {
+        scrollBtn.style.display = 'block';
+      } else {
+        scrollBtn.style.display = 'none';
+      }
+    });
+
+    scrollBtn.addEventListener('click', () => {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth',
+      });
+    });
+  </script>
+</body>
+</html>
