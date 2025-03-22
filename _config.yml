@@ -1,0 +1,15 @@
+theme: minima
+
+title: Vaishvik Patel
+description: Student & ML engieer
+baseurl: ""
+url: "https://patelvaishvikk.github.io/"
+
+# Navigation
+nav:
+  - title: About
+    url: /about/
+  - title: Projects
+    url: /projects/
+  - title: Contact
+    url: /contact/
